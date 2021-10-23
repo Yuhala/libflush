@@ -1,0 +1,3 @@
+option('platform', type: 'string', value: 'x86', description: 'Build platform you are running on')
+option('timer', type: 'combo', choices: ['monotonic', 'perf', 'thread-counter'], value: 'monotonic', description: 'Timer to use for measurements')
+option('examples', type: 'boolean', value: false, description: 'Build example scripts')

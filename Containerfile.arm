@@ -1,0 +1,11 @@
+FROM arm64v8/ubuntu:focal
+LABEL maintainer="constreference"
+
+RUN apt-get -y update && apt-get install -y \
+    git zlib1g-dev gcc meson check
+
+RUN git clone https://github.com/constreference/libflush
+WORKDIR libflush
+
+RUN meson build -Dplatform=arm -Dexamples=true
+RUN cd build; ninja; cd ..
